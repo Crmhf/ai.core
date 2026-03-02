@@ -1,0 +1,135 @@
+name: Daily AI News Collection
+
+on:
+  schedule:
+    # 每天 10:15 UTC+8 (即 02:15 UTC)
+    - cron: '15 2 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  collect-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: pip install requests
+    
+    - name: Collect AI news
+      env:
+        BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+      run: |
+        python3 << 'PYTHON_SCRIPT'
+        import os
+        import json
+        import requests
+        from datetime import datetime
+        from urllib.parse import quote
+
+        date_str = datetime.now().strftime("%Y%m%d")
+        date_formatted = datetime.now().strftime("%Y-%m-%d %H:%M")
+        
+        api_key = os.environ.get('BRAVE_API_KEY', '')
+        
+        queries = [
+            "AI垂直领域 最新发展",
+            "AI垂类应用 行业动态 融资",
+            "垂直AI 医疗 金融 教育",
+            "AI行业细分 市场趋势"
+        ]
+        
+        results = {}
+        
+        if api_key:
+            headers = {"X-Subscription-Token": api_key}
+            for query in queries:
+                try:
+                    url = f"https://api.search.brave.com/res/v1/web/search?q={quote(query)}&count=5"
+                    resp = requests.get(url, headers=headers, timeout=30)
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        web_results = data.get('web', {}).get('results', [])
+                        results[query] = web_results[:5]
+                    else:
+                        results[query] = [{"title": f"API Error: {resp.status_code}", "url": "", "description": ""}]
+                except Exception as e:
+                    results[query] = [{"title": f"Error: {str(e)}", "url": "", "description": ""}]
+        else:
+            for query in queries:
+                results[query] = [{"title": "API key not configured", "url": "", "description": "Please set BRAVE_API_KEY secret"}]
+        
+        # Generate markdown
+        md_content = f"""# AI 垂类行业资讯 - {date_formatted}
+
+> 自动收集的 AI 垂直领域行业动态
+
+---
+
+## 今日概览
+
+- 收集时间：{date_formatted}
+- 数据来源：Brave Search API
+
+---
+
+## 行业动态
+
+"""
+        
+        for query, items in results.items():
+            md_content += f"\n### 🔍 {query}\n\n"
+            if items:
+                for item in items:
+                    title = item.get('title', 'No title')
+                    url = item.get('url', '')
+                    desc = item.get('description', '')
+                    if url:
+                        md_content += f"- [{title}]({url})\n"
+                        if desc:
+                            md_content += f"  - {desc}\n"
+                    else:
+                        md_content += f"- {title}\n"
+            else:
+                md_content += "- 暂无搜索结果\n"
+            md_content += "\n"
+        
+        md_content += """---
+
+## 重点摘要
+
+*待人工整理*
+
+## 参考资料
+
+*待补充*
+
+---
+
+*本文件由 GitHub Actions 自动生成*
+"""
+        
+        # Write file
+        os.makedirs('daily', exist_ok=True)
+        with open(f'daily/{date_str}.md', 'w', encoding='utf-8') as f:
+            f.write(md_content)
+        
+        print(f"Created daily/{date_str}.md")
+        PYTHON_SCRIPT
+    
+    - name: Commit and push
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add daily/
+        DATE=$(date +%Y%m%d)
+        git commit -m "docs: add daily AI industry news for $DATE [auto]" || echo "No changes to commit"
+        git push
