@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家务分配转盘</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>家务分配转盘</h1>
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <div class="section section-1">
+                    <div class="wheel-text">随机分配</div>
+                </div>
+                <div class="section section-2">
+                    <div class="wheel-text">家务任务</div>
+                </div>
+                <div class="section section-3">
+                    <div class="wheel-text">开始转盘</div>
+                </div>
+            </div>
+            <div class="pointer"></div>
+        </div>
+        <button class="spin-btn" id="spinBtn">开始分配</button>
+        <div class="result" id="result">
+            <h2>分配结果：</h2>
+            <div id="resultText">点击按钮开始分配家务！</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

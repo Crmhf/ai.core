@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- 护盾外框 -->
+    <path d="M16 2 L26 8 L26 18 C26 24 16 30 16 30 C16 30 6 24 6 18 L6 8 Z"
+          fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+    <!-- 护盾内部图案 -->
+    <path d="M16 6 L22 10 L22 17 C22 21 16 25 16 25 C16 25 10 21 10 17 L10 10 Z"
+          fill="#5dade2"/>
+    <!-- 中心十字 -->
+    <rect x="14" y="10" width="4" height="10" fill="#2980b9"/>
+    <rect x="10" y="14" width="12" height="4" fill="#2980b9"/>
+  </g>
+</svg>

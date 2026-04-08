@@ -1,4 +1,9 @@
 # Auto Claude data directory
 .auto-claude/
 
+.auto-claude
+.codebuddy
+.github
+.vscode
 .DS_Store
+

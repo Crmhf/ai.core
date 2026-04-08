@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- 玩家头部 -->
+    <circle cx="16" cy="10" r="6" fill="#2ecc71"/>
+    <!-- 头盔 -->
+    <path d="M10 8 Q16 4 22 8 L22 12 Q16 8 10 12 Z" fill="#27ae60"/>
+    <!-- 护目镜 -->
+    <ellipse cx="16" cy="10" rx="4" ry="2" fill="#3498db" opacity="0.7"/>
+
+    <!-- 身体 -->
+    <ellipse cx="16" cy="20" rx="6" ry="8" fill="#2ecc71"/>
+    <!-- 战术背心 -->
+    <rect x="11" y="16" width="10" height="8" fill="#34495e"/>
+
+    <!-- 背心细节 -->
+    <rect x="13" y="18" width="2" height="1" fill="#2c3e50"/>
+    <rect x="17" y="18" width="2" height="1" fill="#2c3e50"/>
+    <rect x="13" y="21" width="2" height="1" fill="#2c3e50"/>
+    <rect x="17" y="21" width="2" height="1" fill="#2c3e50"/>
+
+    <!-- 腿部 -->
+    <rect x="13" y="28" width="2" height="4" fill="#2ecc71"/>
+    <rect x="17" y="28" width="2" height="4" fill="#2ecc71"/>
+  </g>
+</svg>

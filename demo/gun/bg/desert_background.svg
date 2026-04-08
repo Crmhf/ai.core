@@ -1,0 +1,41 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 沙漠渐变 -->
+    <linearGradient id="desertGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#F4A460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 沙丘纹理 -->
+    <pattern id="sandTexture" patternUnits="userSpaceOnUse" width="50" height="50">
+      <rect width="50" height="50" fill="#DEB887"/>
+      <circle cx="10" cy="10" r="1" fill="#D2691E" opacity="0.3"/>
+      <circle cx="30" cy="25" r="1.5" fill="#CD853F" opacity="0.4"/>
+      <circle cx="45" cy="40" r="1" fill="#D2691E" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- 天空背景 -->
+  <rect width="1200" height="400" fill="url(#desertGradient)"/>
+
+  <!-- 地面 -->
+  <rect y="400" width="1200" height="400" fill="url(#sandTexture)"/>
+
+  <!-- 远山 -->
+  <polygon points="0,350 200,250 400,300 600,200 800,280 1000,220 1200,300 1200,400 0,400"
+           fill="#8B7355" opacity="0.6"/>
+
+  <!-- 中景山丘 -->
+  <polygon points="0,380 150,320 350,340 550,280 750,320 950,290 1200,340 1200,400 0,400"
+           fill="#A0522D" opacity="0.8"/>
+
+  <!-- 沙丘 -->
+  <ellipse cx="200" cy="500" rx="100" ry="30" fill="#F4A460" opacity="0.7"/>
+  <ellipse cx="600" cy="520" rx="150" ry="40" fill="#DEB887" opacity="0.6"/>
+  <ellipse cx="1000" cy="480" rx="120" ry="35" fill="#D2691E" opacity="0.5"/>
+
+  <!-- 太阳 -->
+  <circle cx="1000" cy="150" r="40" fill="#FFD700" opacity="0.8"/>
+  <circle cx="1000" cy="150" r="45" fill="#FFA500" opacity="0.3"/>
+</svg>

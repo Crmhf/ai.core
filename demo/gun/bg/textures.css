@@ -1,0 +1,90 @@
+/* 背景纹理CSS文件 */
+
+/* 沙漠迷彩纹理 */
+.desert-camo {
+    background:
+        radial-gradient(circle at 20% 80%, #D2691E 12%, transparent 12.2%),
+        radial-gradient(circle at 80% 80%, #DEB887 12%, transparent 12.2%),
+        radial-gradient(circle at 40% 40%, #F4A460 12%, transparent 12.2%),
+        radial-gradient(circle at 60% 60%, #CD853F 12%, transparent 12.2%),
+        linear-gradient(90deg, #D2691E 50%, transparent 50%);
+    background-size: 15px 15px, 20px 20px, 25px 25px, 30px 30px, 10px 10px;
+}
+
+/* 城市废墟纹理 */
+.urban-ruins {
+    background:
+        linear-gradient(45deg, #2C3E50 25%, transparent 25%),
+        linear-gradient(-45deg, #34495E 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1A252F 75%),
+        linear-gradient(-45deg, transparent 75%, #2C3E50 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* 军事迷彩纹理 */
+.military-camo {
+    background:
+        radial-gradient(circle at 25% 25%, #1B2631 8%, transparent 8%),
+        radial-gradient(circle at 75% 75%, #2E4057 8%, transparent 8%),
+        linear-gradient(45deg, #34495E 25%, transparent 25%),
+        linear-gradient(-45deg, #2C3E50 25%, transparent 25%);
+    background-size: 30px 30px, 25px 25px, 15px 15px, 20px 20px;
+}
+
+/* 金属网格纹理 */
+.metal-grid {
+    background:
+        linear-gradient(90deg, #566573 1px, transparent 1px),
+        linear-gradient(180deg, #566573 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-color: #34495E;
+}
+
+/* 混凝土纹理 */
+.concrete {
+    background:
+        radial-gradient(circle at 30% 40%, rgba(0,0,0,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 70% 80%, rgba(0,0,0,0.08) 1px, transparent 1px),
+        radial-gradient(circle at 20% 70%, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px, 40px 40px;
+    background-color: #7F8C8D;
+}
+
+/* 战场烟雾效果 */
+.battle-smoke {
+    background:
+        radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse at 20% 80%, rgba(0,0,0,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0,0,0,0.08) 0%, transparent 60%);
+    background-size: 200px 100px, 150px 80px, 180px 90px;
+}
+
+/* 弹孔效果 */
+.bullet-holes {
+    background:
+        radial-gradient(circle at 15% 25%, rgba(0,0,0,0.8) 2px, transparent 2px),
+        radial-gradient(circle at 85% 75%, rgba(0,0,0,0.6) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 45% 60%, rgba(0,0,0,0.7) 1px, transparent 1px),
+        radial-gradient(circle at 70% 30%, rgba(0,0,0,0.5) 2.5px, transparent 2.5px);
+    background-size: 80px 80px, 60px 60px, 100px 100px, 90px 90px;
+}
+
+/* 夜视效果 */
+.night-vision {
+    background:
+        radial-gradient(circle, rgba(0,255,0,0.1) 0%, rgba(0,100,0,0.3) 100%);
+    filter: contrast(1.2) brightness(0.8);
+}
+
+/* 热成像效果 */
+.thermal-vision {
+    background:
+        linear-gradient(45deg,
+            rgba(255,0,0,0.1) 0%,
+            rgba(255,255,0,0.1) 25%,
+            rgba(0,255,0,0.1) 50%,
+            rgba(0,255,255,0.1) 75%,
+            rgba(0,0,255,0.1) 100%);
+    filter: contrast(1.5) saturate(2);
+}

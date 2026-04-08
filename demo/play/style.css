@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #4a5568;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wheel-container {
+    position: relative;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.section {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.section-1 {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    transform: rotate(0deg);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.section-2 {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    transform: rotate(120deg);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.section-3 {
+    background: linear-gradient(45deg, #45b7d1, #96c93d);
+    transform: rotate(240deg);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.wheel-text {
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.pointer {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #ff4757;
+    z-index: 10;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+}
+
+.spin-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    margin: 20px 0;
+}
+
+.spin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+.spin-btn:active {
+    transform: translateY(0);
+}
+
+.spin-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    border-left: 5px solid #ff6b6b;
+}
+
+.result h2 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#resultText {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.result-highlight {
+    color: #ff6b6b !important;
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+/* 转盘旋转动画 */
+.spinning {
+    animation: spin 3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(var(--rotation));
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .wheel-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .person {
+        font-size: 16px;
+    }
+
+    .task {
+        font-size: 12px;
+    }
+}

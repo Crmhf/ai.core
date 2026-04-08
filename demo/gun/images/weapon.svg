@@ -1,0 +1,15 @@
+<svg width="48" height="32" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#2c3e50">
+    <!-- 枪管 -->
+    <rect x="20" y="14" width="25" height="4" rx="2"/>
+    <!-- 枪身 -->
+    <rect x="8" y="10" width="18" height="12" rx="2"/>
+    <!-- 握把 -->
+    <rect x="2" y="12" width="8" height="16" rx="2"/>
+    <!-- 扳机护圈 -->
+    <rect x="10" y="20" width="6" height="6" rx="3" fill="none" stroke="#2c3e50" stroke-width="1"/>
+    <!-- 瞄准器 -->
+    <rect x="15" y="8" width="3" height="4" fill="#34495e"/>
+    <rect x="25" y="8" width="3" height="4" fill="#34495e"/>
+  </g>
+</svg>

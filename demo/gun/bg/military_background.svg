@@ -1,0 +1,64 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 军事基地渐变 -->
+    <linearGradient id="militaryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5D6D7E;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2E4057;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B2631;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 迷彩纹理 -->
+    <pattern id="camoTexture" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#2E4057"/>
+      <polygon points="0,0 15,0 20,10 10,20 0,15" fill="#1B2631"/>
+      <polygon points="25,5 40,5 40,20 30,25 20,15" fill="#34495E"/>
+      <polygon points="5,25 20,30 15,40 0,40 0,30" fill="#1B2631"/>
+      <polygon points="30,30 40,25 40,40 25,40" fill="#34495E"/>
+    </pattern>
+  </defs>
+
+  <!-- 天空背景 -->
+  <rect width="1200" height="500" fill="url(#militaryGradient)"/>
+
+  <!-- 地面 -->
+  <rect y="500" width="1200" height="300" fill="url(#camoTexture)"/>
+
+  <!-- 军事建筑 -->
+  <!-- 主要指挥部 -->
+  <rect x="400" y="300" width="200" height="200" fill="#2C3E50"/>
+  <polygon points="400,300 500,250 600,300" fill="#1A252F"/>
+
+  <!-- 兵营 -->
+  <rect x="100" y="350" width="150" height="150" fill="#34495E"/>
+  <rect x="700" y="380" width="120" height="120" fill="#34495E"/>
+
+  <!-- 瞭望塔 -->
+  <rect x="50" y="200" width="30" height="300" fill="#2C3E50"/>
+  <rect x="40" y="180" width="50" height="40" fill="#1A252F"/>
+
+  <rect x="900" y="250" width="25" height="250" fill="#2C3E50"/>
+  <rect x="892" y="230" width="41" height="35" fill="#1A252F"/>
+
+  <!-- 围墙 -->
+  <rect x="0" y="480" width="1200" height="20" fill="#566573"/>
+
+  <!-- 铁丝网效果 -->
+  <g stroke="#85929E" stroke-width="1" fill="none">
+    <path d="M0,470 Q50,460 100,470 T200,470 T300,470 T400,470 T500,470 T600,470 T700,470 T800,470 T900,470 T1000,470 T1100,470 T1200,470"/>
+    <path d="M0,475 Q50,485 100,475 T200,475 T300,475 T400,475 T500,475 T600,475 T700,475 T800,475 T900,475 T1000,475 T1100,475 T1200,475"/>
+  </g>
+
+  <!-- 探照灯光束 -->
+  <polygon points="65,200 200,400 250,380 80,180" fill="#F4F4F4" opacity="0.2"/>
+  <polygon points="912,250 800,450 850,470 930,270" fill="#F4F4F4" opacity="0.15"/>
+
+  <!-- 军用车辆 -->
+  <rect x="250" y="460" width="60" height="25" fill="#1A252F"/>
+  <circle cx="260" cy="485" r="8" fill="#2C3E50"/>
+  <circle cx="300" cy="485" r="8" fill="#2C3E50"/>
+
+  <!-- 直升机停机坪 -->
+  <circle cx="850" cy="550" r="50" fill="#34495E" opacity="0.8"/>
+  <circle cx="850" cy="550" r="45" fill="none" stroke="#85929E" stroke-width="2"/>
+  <text x="850" y="555" text-anchor="middle" fill="#85929E" font-family="Arial" font-size="20" font-weight="bold">H</text>
+</svg>

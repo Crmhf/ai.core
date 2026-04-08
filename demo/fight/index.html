@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫威英雄双人对战</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>漫威英雄双人对战</h1>
+            <div class="score-board">
+                <div class="player-score">
+                    <h2>玩家1</h2>
+                    <div class="score">0</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="p1-health"></div>
+                    </div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="player-score">
+                    <h2>玩家2</h2>
+                    <div class="score">0</div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="p2-health"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-canvas-container">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div class="game-info">
+                <div class="controls">
+                    <div class="player-controls">
+                        <h3>玩家1控制</h3>
+                        <p>WASD 移动 | J 攻击 | K 技能</p>
+                    </div>
+                    <div class="player-controls">
+                        <h3>玩家2控制</h3>
+                        <p>↑↓←→ 移动 | 1 攻击 | 2 技能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-footer">
+            <button id="startBtn" class="btn btn-primary">开始游戏</button>
+            <button id="resetBtn" class="btn btn-secondary">重置游戏</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

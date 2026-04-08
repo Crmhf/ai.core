@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角洲射击游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="1200" height="800"></canvas>
+
+        <!-- 游戏UI -->
+        <div id="gameUI">
+            <!-- 血量条 -->
+            <div id="healthBar">
+                <div class="bar-container">
+                    <div class="bar-label">血量</div>
+                    <div class="bar-bg">
+                        <div id="healthFill" class="bar-fill health"></div>
+                    </div>
+                    <div class="bar-text"><span id="healthText">200</span>/200</div>
+                </div>
+            </div>
+
+            <!-- 护盾条 -->
+            <div id="shieldBar">
+                <div class="bar-container">
+                    <div class="bar-label">护盾</div>
+                    <div class="bar-bg">
+                        <div id="shieldFill" class="bar-fill shield"></div>
+                    </div>
+                    <div class="bar-text"><span id="shieldText">100</span>/100</div>
+                </div>
+            </div>
+
+            <!-- 弹药信息 -->
+            <div id="ammoInfo">
+                <div class="ammo-container">
+                    <div class="ammo-current"><span id="currentAmmo">30</span></div>
+                    <div class="ammo-separator">/</div>
+                    <div class="ammo-total">∞</div>
+                </div>
+                <div class="weapon-name">沙漠之鹰</div>
+            </div>
+
+            <!-- 换弹提示 -->
+            <div id="reloadIndicator" class="hidden">
+                <div class="reload-text">换弹中...</div>
+                <div class="reload-progress">
+                    <div id="reloadBar"></div>
+                </div>
+            </div>
+
+            <!-- 击杀数 -->
+            <div id="killCounter">
+                <div class="kill-label">击杀</div>
+                <div class="kill-count"><span id="killCount">0</span></div>
+            </div>
+        </div>
+
+        <!-- 游戏开始界面 -->
+        <div id="startScreen">
+            <h1>三角洲射击游戏</h1>
+            <p>WASD移动，鼠标瞄准射击，R键换弹</p>
+
+            <!-- 场景选择 -->
+            <div id="sceneSelector">
+                <h3>选择战场</h3>
+                <div class="scene-options">
+                    <div class="scene-option active" data-scene="military">
+                        <img src="bg/military_background.svg" alt="军事基地">
+                        <span>军事基地</span>
+                    </div>
+                    <div class="scene-option" data-scene="desert">
+                        <img src="bg/desert_background.svg" alt="沙漠战场">
+                        <span>沙漠战场</span>
+                    </div>
+                    <div class="scene-option" data-scene="city">
+                        <img src="bg/city_background.svg" alt="城市废墟">
+                        <span>城市废墟</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="startButton">开始游戏</button>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="gameOverScreen" class="hidden">
+            <h1>游戏结束</h1>
+            <p>最终击杀数: <span id="finalKills">0</span></p>
+            <button id="restartButton">重新开始</button>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="weapon.js"></script>
+    <script src="player.js"></script>
+    <script src="enemy.js"></script>
+    <script src="map.js"></script>
+    <script src="ui.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
